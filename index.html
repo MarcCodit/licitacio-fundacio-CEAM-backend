@@ -1,15 +1,17 @@
 <!DOCTYPE html>
-<html lang="ca">
+<html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>QUEPAR 2026 — Portal Web Administració</title>
-  <link rel="stylesheet" href="css/styles.css" />
-  <link rel="stylesheet" href="css/portal.css" />
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>QUEPAR 2026 — Portal de Administración</title>
+  <link rel="stylesheet" href="css/styles.css"/>
+  <link rel="stylesheet" href="css/portal.css"/>
 </head>
 <body class="portal-layout">
 
-  <!-- ── Sidebar ── -->
+  <!-- ════════════════════════════════════════
+       SIDEBAR
+  ════════════════════════════════════════ -->
   <aside class="sidebar" id="sidebar">
     <div class="sidebar-logo">
       <div class="logo-mark">Q</div>
@@ -20,257 +22,418 @@
     </div>
 
     <nav class="sidebar-nav">
-      <div class="nav-section-label">Visió general</div>
+      <div class="nav-section-label">Panel de control</div>
       <a href="#" class="nav-item active" data-page="dashboard">
         <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
-        Dashboard
-      </a>
-      <a href="#" class="nav-item" data-page="quemes">
-        <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93V18c0-.55.45-1 1-1s1 .45 1 1v1.93c-2.6-.5-4.67-2.57-5.17-5.17H9c.55 0 1 .45 1 1s-.45 1-1 1H6.07C6.57 17.36 9.4 19.43 11 19.93z"/></svg>
-        Registre Quemes
-      </a>
-      <a href="#" class="nav-item" data-page="usuaris">
-        <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-        Usuaris
-      </a>
-      <a href="#" class="nav-item" data-page="pronostic">
-        <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
-        Pronòstic Risc
+        Panel principal
       </a>
 
-      <div class="nav-section-label" style="margin-top:20px;">Descàrregues</div>
-      <a href="#" class="nav-item" data-page="exports">
-        <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-        Exportar Dades
+      <div class="nav-section-label">Gestión</div>
+      <a href="#" class="nav-item" data-page="quemas">
+        <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" viewBox="0 0 24 24"><path d="M12 2c0 0-5 4.5-5 9a5 5 0 0 0 10 0c0-4.5-5-9-5-9z"/><path d="M9 14c0 0 1 2 3 2s3-2 3-2"/></svg>
+        Registro de quemas
+      </a>
+      <a href="#" class="nav-item" data-page="usuarios">
+        <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        Usuarios registrados
+      </a>
+
+      <div class="nav-section-label">Datos y herramientas</div>
+      <a href="#" class="nav-item" data-page="pronostico">
+        <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" viewBox="0 0 24 24"><path d="M8 6h13M8 12h13M8 18h13M3 6h.01M3 12h.01M3 18h.01"/></svg>
+        Previsión de riesgo
+      </a>
+      <a href="#" class="nav-item" data-page="exportar">
+        <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        Exportar a Excel
       </a>
     </nav>
 
     <div class="sidebar-footer">
-      <div class="user-pill">
-        <div class="user-avatar">CE</div>
+      <div class="sidebar-user">
+        <div class="user-avatar">TC</div>
         <div>
-          <div style="font-size:.8rem;font-weight:600;">CEAM Admin</div>
-          <div style="font-size:.72rem;color:var(--c-muted);">admin@ceam.es</div>
+          <div class="user-name">Técnico CEAM</div>
+          <div class="user-role">Administrador</div>
         </div>
+        <button class="logout-btn" title="Cerrar sesión" onclick="alert('Sesión cerrada')">
+          <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>
+        </button>
       </div>
     </div>
   </aside>
 
-  <!-- ── Main ── -->
-  <main class="portal-main">
+  <!-- ════════════════════════════════════════
+       MAIN CONTENT
+  ════════════════════════════════════════ -->
+  <div class="main-content">
 
-    <!-- Topbar -->
-    <header class="topbar">
-      <div class="topbar-left">
-        <button class="btn-icon" id="menu-toggle" aria-label="Menú">
-          <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
-        </button>
-        <div class="page-title" id="page-title">Dashboard</div>
-      </div>
+    <!-- Barra superior -->
+    <div class="topbar">
+      <span class="topbar-title" id="topbar-title">Panel principal</span>
       <div class="topbar-right">
-        <div class="update-badge">
-          <span class="update-dot"></span>
-          Última actualització: <strong id="last-update"></strong>
-        </div>
-        <button class="btn btn-primary btn-sm" onclick="showToast('Dades actualitzades', 'success')">
-          <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="23 4 23 10 17 10"/><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"/></svg>
-          Actualitzar
-        </button>
+        <span class="live-dot">En vivo</span>
+        <span class="topbar-time" id="live-clock">09:41:00 — 06/10/2026</span>
+        <span class="badge badge-green">Campaña activa</span>
       </div>
-    </header>
+    </div>
 
-    <!-- ── PAGE: Dashboard ── -->
-    <div class="page-content active" id="page-dashboard">
-      <!-- Stats row -->
-      <div class="stats-grid reveal">
-        <div class="stat-card">
-          <div class="stat-label">Usuaris Registrats</div>
-          <div class="stat-value" id="stat-users">–</div>
-          <div class="stat-delta up" id="stat-users-delta"></div>
+    <!-- ─────────── DASHBOARD ─────────── -->
+    <div class="page-section active" id="section-dashboard">
+      <div class="page-content">
+        <div class="page-header">
+          <div class="page-header-left">
+            <h1>Panel principal</h1>
+            <p>Campaña QUEPAR 2026 · Albufera de Valencia · Actualizado 06/10/2026 09:41</p>
+          </div>
+          <div class="page-header-actions">
+            <button class="btn btn-secondary btn-sm">
+              <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="23 4 23 10 17 10"/><path d="M20.49 15a9 9 0 1 1-.08-2.86"/></svg>
+              Actualizar
+            </button>
+          </div>
         </div>
-        <div class="stat-card">
-          <div class="stat-label">Quemes Activades Avui</div>
-          <div class="stat-value" id="stat-quemes-avui">–</div>
-          <div class="stat-delta" id="stat-quemes-delta"></div>
+
+        <!-- KPIs -->
+        <div class="stats-grid">
+          <div class="stat-card">
+            <div class="stat-label">Usuarios registrados</div>
+            <div class="stat-value" id="stat-usuarios">0</div>
+            <div class="stat-sub">Desde el inicio de la campaña</div>
+            <div class="stat-trend trend-up">↑ 12 nuevos hoy</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-label">Quemas hoy</div>
+            <div class="stat-value" id="stat-quemas-hoy">0</div>
+            <div class="stat-sub">6 de octubre de 2026</div>
+            <div class="stat-trend trend-up">↑ 38 más que ayer</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-label">Total campaña</div>
+            <div class="stat-value" id="stat-quemas-total">0</div>
+            <div class="stat-sub">Desde el 1 oct. 2026</div>
+            <div class="stat-trend trend-up">↑ Campaña activa</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-label">Municipios activos</div>
+            <div class="stat-value" id="stat-municipios">0</div>
+            <div class="stat-sub">Con quemas registradas</div>
+            <div class="stat-trend trend-up">↑ Zona de la Albufera</div>
+          </div>
         </div>
-        <div class="stat-card">
-          <div class="stat-label">Quemes Campanya</div>
-          <div class="stat-value" id="stat-quemes-total">–</div>
-          <div class="stat-delta up"></div>
+
+        <!-- Gráfico + previsión -->
+        <div class="content-grid">
+          <div class="card">
+            <div class="card-header">
+              <span class="card-title">Quemas por día — últimos 30 días</span>
+              <span class="badge badge-blue">Oct 2026</span>
+            </div>
+            <div class="card-body">
+              <div class="bar-chart" id="quemas-chart"></div>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-header">
+              <span class="card-title">Previsión de riesgo · 24h</span>
+              <span class="badge badge-green">Fuente: CEAM</span>
+            </div>
+            <div class="card-body">
+              <div id="forecast-mini" style="margin-bottom:16px"></div>
+              <div style="display:flex;gap:8px;flex-wrap:wrap">
+                <span style="font-size:11px;color:var(--c-muted)">🔴 Muy alto / Alto</span>
+                <span style="font-size:11px;color:var(--c-muted)">🟠 Transitorio</span>
+                <span style="font-size:11px;color:var(--c-muted)">🟢 Bajo / Muy bajo</span>
+                <span style="font-size:11px;color:var(--c-muted)">⚫ Sin datos</span>
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="stat-card">
-          <div class="stat-label">Risc Actual (hora)</div>
-          <div id="stat-risc-actual" style="margin-top:6px;"></div>
+
+        <!-- Tablas inferiores -->
+        <div class="content-grid">
+          <div class="card">
+            <div class="card-header">
+              <span class="card-title">Últimas quemas registradas</span>
+              <button class="btn btn-secondary btn-sm" onclick="showPage('quemas')">Ver todas →</button>
+            </div>
+            <div style="overflow-x:auto">
+              <table class="data-table" id="recent-quemas-table">
+                <thead>
+                  <tr>
+                    <th>Código</th>
+                    <th>DNI</th>
+                    <th>Municipio</th>
+                    <th>Pol.</th>
+                    <th>Parc.</th>
+                    <th>Rec.</th>
+                    <th>Sup.</th>
+                    <th>Fecha/Hora</th>
+                    <th>Riesgo</th>
+                    <th>Coordenadas</th>
+                  </tr>
+                </thead>
+                <tbody></tbody>
+              </table>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-header">
+              <span class="card-title">Distribución por municipio</span>
+            </div>
+            <div class="card-body">
+              <div class="donut-wrapper">
+                <canvas id="donut-canvas" width="128" height="128" style="flex-shrink:0"></canvas>
+                <div class="donut-legend" id="donut-legend"></div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
+    </div>
 
-      <!-- Forecast + Chart -->
-      <div class="two-col reveal" style="margin-top:24px;">
+    <!-- ─────────── QUEMAS ─────────── -->
+    <div class="page-section" id="section-quemas">
+      <div class="page-content">
+        <div class="page-header">
+          <div class="page-header-left">
+            <h1>Registro de quemas</h1>
+            <p>Historial completo de quemas activadas durante la campaña 2026</p>
+          </div>
+          <div class="page-header-actions">
+            <button class="btn btn-primary btn-sm" onclick="exportExcel('quemas')">
+              <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+              Exportar Excel
+            </button>
+          </div>
+        </div>
+
         <div class="card">
-          <div class="card-header">
-            <h3>Previsió Risc — Pròximes 24 hores</h3>
-            <span class="text-muted text-mono" style="font-size:.75rem;" id="forecast-date"></span>
+          <div class="table-toolbar">
+            <div class="table-toolbar-left">
+              <div class="search-input-wrap">
+                <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+                <input class="search-input" id="search-quemas" type="text" placeholder="Buscar por municipio, DNI, código…"/>
+              </div>
+              <select class="filter-select" id="filter-risk">
+                <option value="">Todos los riesgos</option>
+                <option value="1">Muy alto (1)</option>
+                <option value="2">Alto (2)</option>
+                <option value="3">Transitorio (3)</option>
+                <option value="4">Bajo (4)</option>
+                <option value="5">Muy bajo (5)</option>
+              </select>
+            </div>
+            <span style="font-size:0.82rem;color:var(--c-muted)" id="quemas-count"></span>
           </div>
-          <div class="card-body">
-            <div id="forecast-bars" class="forecast-grid"></div>
+          <div style="overflow-x:auto">
+            <table class="data-table" id="quemas-main-table">
+              <thead>
+                <tr>
+                  <th>Código</th>
+                  <th>DNI</th>
+                  <th>Municipio</th>
+                  <th>Pol.</th>
+                  <th>Parcela</th>
+                  <th>Recinto</th>
+                  <th>Superficie</th>
+                  <th>Fecha/Hora</th>
+                  <th>Riesgo</th>
+                  <th>Coordenadas GPS</th>
+                </tr>
+              </thead>
+              <tbody></tbody>
+            </table>
+          </div>
+          <div style="display:flex;align-items:center;justify-content:flex-end;padding:12px 16px;border-top:1px solid var(--c-border)">
+            <div class="pagination" id="quemas-pagination"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ─────────── USUARIOS ─────────── -->
+    <div class="page-section" id="section-usuarios">
+      <div class="page-content">
+        <div class="page-header">
+          <div class="page-header-left">
+            <h1>Usuarios registrados</h1>
+            <p>Listado completo de agricultores dados de alta en la app QUEPAR</p>
+          </div>
+          <div class="page-header-actions">
+            <button class="btn btn-primary btn-sm" onclick="exportExcel('usuarios')">
+              <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+              Exportar Excel
+            </button>
           </div>
         </div>
 
         <div class="card">
-          <div class="card-header">
-            <h3>Quemes per Dia — Campanya 2026</h3>
+          <div class="table-toolbar">
+            <div class="table-toolbar-left">
+              <div class="search-input-wrap">
+                <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+                <input class="search-input" id="search-usuarios" type="text" placeholder="Buscar por nombre, DNI, municipio…"/>
+              </div>
+            </div>
+            <span style="font-size:0.82rem;color:var(--c-muted)" id="usuarios-count"></span>
           </div>
-          <div class="card-body" style="padding-top:12px;">
-            <canvas id="chart-quemes" height="160"></canvas>
+          <div style="overflow-x:auto">
+            <table class="data-table" id="usuarios-table">
+              <thead>
+                <tr>
+                  <th>Nombre</th>
+                  <th>DNI / NIE</th>
+                  <th>Teléfono</th>
+                  <th>Municipio</th>
+                  <th>Fecha alta</th>
+                  <th style="text-align:center">Quemas</th>
+                  <th>Estado</th>
+                </tr>
+              </thead>
+              <tbody></tbody>
+            </table>
           </div>
-        </div>
-      </div>
-
-      <!-- Recent registrations table -->
-      <div class="card reveal" style="margin-top:24px;">
-        <div class="card-header">
-          <h3>Últimes Quemes Registrades</h3>
-          <button class="btn btn-secondary btn-sm" onclick="switchPage('quemes')">Veure totes</button>
-        </div>
-        <div class="card-body" style="padding:0;">
-          <div class="table-wrap">
-            <table id="table-recent"></table>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- ── PAGE: Quemes ── -->
-    <div class="page-content" id="page-quemes">
-      <div class="page-toolbar reveal">
-        <div class="search-wrap">
-          <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
-          <input type="text" class="form-control" placeholder="Cercar per municipi, parcel·la…" id="search-quemes" style="padding-left:36px;" />
-        </div>
-        <div class="toolbar-actions">
-          <select class="form-control" style="width:auto;" id="filter-risk">
-            <option value="">Tots els riscos</option>
-            <option value="1">Risc molt alt</option>
-            <option value="2">Risc alt</option>
-            <option value="3">Transitori</option>
-            <option value="4">Risc baix</option>
-            <option value="5">Risc molt baix</option>
-          </select>
-          <button class="btn btn-primary btn-sm" onclick="exportExcel('quemes')">
-            <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-            Exportar Excel
-          </button>
-        </div>
-      </div>
-      <div class="card reveal" style="margin-top:16px;">
-        <div class="card-body" style="padding:0;">
-          <div class="table-wrap">
-            <table id="table-quemes-full"></table>
+          <div style="display:flex;align-items:center;justify-content:flex-end;padding:12px 16px;border-top:1px solid var(--c-border)">
+            <div class="pagination" id="usuarios-pagination"></div>
           </div>
         </div>
       </div>
     </div>
 
-    <!-- ── PAGE: Usuaris ── -->
-    <div class="page-content" id="page-usuaris">
-      <div class="page-toolbar reveal">
-        <div class="search-wrap">
-          <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
-          <input type="text" class="form-control" placeholder="Cercar per DNI, telèfon…" style="padding-left:36px;" />
-        </div>
-        <div class="toolbar-actions">
-          <button class="btn btn-primary btn-sm" onclick="exportExcel('usuaris')">
-            <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-            Exportar Excel
-          </button>
-        </div>
-      </div>
-      <div class="card reveal" style="margin-top:16px;">
-        <div class="card-body" style="padding:0;">
-          <div class="table-wrap">
-            <table id="table-usuaris"></table>
+    <!-- ─────────── PREVISIÓN ─────────── -->
+    <div class="page-section" id="section-pronostico">
+      <div class="page-content">
+        <div class="page-header">
+          <div class="page-header-left">
+            <h1>Previsión de riesgo</h1>
+            <p>Pronóstico horario para las próximas 36 horas · Fuente: Fundación CEAM</p>
+          </div>
+          <div class="page-header-actions">
+            <button class="btn btn-secondary btn-sm">
+              <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="23 4 23 10 17 10"/><path d="M20.49 15a9 9 0 1 1-.08-2.86"/></svg>
+              Actualizar previsión
+            </button>
           </div>
         </div>
-      </div>
-    </div>
 
-    <!-- ── PAGE: Pronòstic ── -->
-    <div class="page-content" id="page-pronostic">
-      <div class="card reveal">
-        <div class="card-header">
-          <h3>Previsió Risc — Pròximes 36 hores</h3>
-          <div class="text-muted" style="font-size:.8rem;">Font: arxiu QUEPAR2026 (servidor CEAM)</div>
-        </div>
-        <div class="card-body">
-          <div id="forecast-full-grid" class="forecast-full"></div>
-          <div style="margin-top:20px;padding-top:16px;border-top:1px solid var(--c-border);">
-            <div style="font-size:.8rem;font-weight:600;color:var(--c-muted);letter-spacing:.05em;text-transform:uppercase;margin-bottom:12px;">Llegenda</div>
-            <div style="display:flex;flex-wrap:wrap;gap:10px;">
-              <span class="risk-badge r1">1 · Risc molt alt</span>
-              <span class="risk-badge r2">2 · Risc alt</span>
-              <span class="risk-badge r3">3 · Transitori</span>
-              <span class="risk-badge r4">4 · Risc baix</span>
-              <span class="risk-badge r5">5 · Risc molt baix</span>
-              <span class="risk-badge r0">0 · Sense dada</span>
+        <div class="content-grid">
+          <div class="card">
+            <div class="card-header">
+              <span class="card-title">Serie horaria de riesgo · 36h</span>
+              <span class="topbar-time" style="font-size:0.78rem">Actualización: 06/10/2026 09:41</span>
+            </div>
+            <div class="card-body" style="padding:12px 16px">
+              <div class="forecast-grid" id="forecast-36h"></div>
             </div>
           </div>
-        </div>
-      </div>
 
-      <!-- Map placeholder -->
-      <div class="card reveal" style="margin-top:24px;">
-        <div class="card-header"><h3>Distribució Municipal — Albufera de València</h3></div>
-        <div class="card-body">
-          <div class="map-placeholder">
-            <svg width="60" height="60" fill="none" stroke="currentColor" stroke-width="1.2" viewBox="0 0 24 24" style="opacity:.3"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
-            <div style="margin-top:12px;font-size:.875rem;color:var(--c-muted);">Mapa interactiu — integrar amb API cartogràfica</div>
-            <div style="font-size:.78rem;color:var(--c-muted);margin-top:4px;">Municipis: Sueca, Cullera, Alzira, Algemesí, Sollana…</div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- ── PAGE: Exports ── -->
-    <div class="page-content" id="page-exports">
-      <div class="exports-grid reveal">
-        <div class="card export-card">
-          <div class="card-body">
-            <div class="export-icon">📋</div>
-            <h3>Quemes Activades</h3>
-            <p>Totes les quemes des de l'inici de la campanya. Inclou referència usuari, municipi, polígon, parcel·la, superfície, hora activació, coordenades i nivell de risc.</p>
-            <div style="display:flex;gap:10px;margin-top:16px;">
-              <button class="btn btn-primary btn-sm" onclick="exportExcel('quemes')">Excel</button>
-              <button class="btn btn-secondary btn-sm" onclick="showToast('CSV generat', 'success')">CSV</button>
-            </div>
-          </div>
-        </div>
-        <div class="card export-card">
-          <div class="card-body">
-            <div class="export-icon">👥</div>
-            <h3>Usuaris Registrats</h3>
-            <p>Relació completa d'usuaris registrats a l'aplicació des de l'inici de la campanya. Inclou DNI, telèfon i data de registre.</p>
-            <div style="display:flex;gap:10px;margin-top:16px;">
-              <button class="btn btn-primary btn-sm" onclick="exportExcel('usuaris')">Excel</button>
-              <button class="btn btn-secondary btn-sm" onclick="showToast('CSV generat', 'success')">CSV</button>
-            </div>
-          </div>
-        </div>
-        <div class="card export-card">
-          <div class="card-body">
-            <div class="export-icon">📊</div>
-            <h3>Estadístiques Diàries</h3>
-            <p>Resum diari de quemes per municipi des de l'inici de la campanya. Útil per generar gràfics de sèrie temporal.</p>
-            <div style="display:flex;gap:10px;margin-top:16px;">
-              <button class="btn btn-primary btn-sm" onclick="showToast('Exportant estadístiques…', 'info')">Excel</button>
+          <div class="card" style="align-self:start">
+            <div class="card-header"><span class="card-title">Leyenda de riesgo</span></div>
+            <div class="card-body" style="display:flex;flex-direction:column;gap:10px">
+              <div style="display:flex;align-items:center;gap:10px">
+                <div style="width:36px;height:20px;background:#b0acaa;border-radius:4px"></div>
+                <span style="font-size:0.875rem"><strong>0 — Sin datos</strong> <span style="color:var(--c-muted)">(color gris)</span></span>
+              </div>
+              <div style="display:flex;align-items:center;gap:10px">
+                <div style="width:36px;height:20px;background:#c0392b;border-radius:4px"></div>
+                <span style="font-size:0.875rem"><strong>1 — Riesgo muy alto</strong> <span style="color:var(--c-muted)">(rojo)</span></span>
+              </div>
+              <div style="display:flex;align-items:center;gap:10px">
+                <div style="width:36px;height:20px;background:#e74c3c;border-radius:4px"></div>
+                <span style="font-size:0.875rem"><strong>2 — Riesgo alto</strong> <span style="color:var(--c-muted)">(rojo claro)</span></span>
+              </div>
+              <div style="display:flex;align-items:center;gap:10px">
+                <div style="width:36px;height:20px;background:#e67e22;border-radius:4px"></div>
+                <span style="font-size:0.875rem"><strong>3 — Situación transitoria</strong> <span style="color:var(--c-muted)">(naranja)</span></span>
+              </div>
+              <div style="display:flex;align-items:center;gap:10px">
+                <div style="width:36px;height:20px;background:#27ae60;border-radius:4px"></div>
+                <span style="font-size:0.875rem"><strong>4 — Riesgo bajo</strong> <span style="color:var(--c-muted)">(verde)</span></span>
+              </div>
+              <div style="display:flex;align-items:center;gap:10px">
+                <div style="width:36px;height:20px;background:#2ecc71;border-radius:4px"></div>
+                <span style="font-size:0.875rem"><strong>5 — Riesgo muy bajo</strong> <span style="color:var(--c-muted)">(verde claro)</span></span>
+              </div>
+              <hr style="border:none;border-top:1px solid var(--c-border);margin:4px 0"/>
+              <p style="font-size:0.82rem;color:var(--c-muted);line-height:1.5">Los datos proceden del archivo de previsiones del servidor CEAM, actualizado cada hora. Formato: <code style="font-size:0.78rem">AA/MM/DD,hh,R0,R1,R2,Lluv,Conf</code></p>
             </div>
           </div>
         </div>
       </div>
     </div>
 
-  </main>
+    <!-- ─────────── EXPORTAR ─────────── -->
+    <div class="page-section" id="section-exportar">
+      <div class="page-content">
+        <div class="page-header">
+          <div class="page-header-left">
+            <h1>Exportación de datos</h1>
+            <p>Descarga de registros de la campaña en formato Excel (.xlsx)</p>
+          </div>
+        </div>
 
-  <script src="js/utils.js"></script>
+        <div class="export-grid">
+          <div class="export-card">
+            <div class="export-card-icon">
+              <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" viewBox="0 0 24 24"><path d="M12 2c0 0-5 4.5-5 9a5 5 0 0 0 10 0c0-4.5-5-9-5-9z"/></svg>
+            </div>
+            <h3>Quemas activadas</h3>
+            <p>Exporta todas las quemas de la campaña con referencia del usuario, municipio, polígono, parcela, recinto, superficie, fecha/hora de activación, coordenadas GPS y nivel de riesgo.</p>
+            <div style="display:flex;gap:8px;flex-wrap:wrap;font-size:0.8rem;color:var(--c-muted)">
+              <span>📊 1.842 registros</span>
+              <span>📅 1–6 oct 2026</span>
+              <span>💾 ~180 KB</span>
+            </div>
+            <button class="btn btn-primary" onclick="exportExcel('quemas')">
+              <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+              Descargar quepar_quemas_20261006.xlsx
+            </button>
+          </div>
+
+          <div class="export-card">
+            <div class="export-card-icon">
+              <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            </div>
+            <h3>Usuarios registrados</h3>
+            <p>Exporta el listado completo de usuarios dados de alta en la aplicación móvil QUEPAR: nombre, DNI, teléfono, municipio, fecha de alta y número de quemas activadas.</p>
+            <div style="display:flex;gap:8px;flex-wrap:wrap;font-size:0.8rem;color:var(--c-muted)">
+              <span>👤 312 usuarios</span>
+              <span>📅 Desde sep. 2024</span>
+              <span>💾 ~42 KB</span>
+            </div>
+            <button class="btn btn-primary" onclick="exportExcel('usuarios')">
+              <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+              Descargar quepar_usuarios_20261006.xlsx
+            </button>
+          </div>
+
+          <div class="export-card" style="grid-column:1/-1">
+            <div class="export-card-icon">
+              <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+            </div>
+            <h3>Exportación completa de la campaña</h3>
+            <p>Descarga un archivo ZIP con todos los datos de la campaña: quemas, usuarios y previsiones de riesgo en formato reutilizable para la Fundación CEAM.</p>
+            <div style="display:flex;gap:8px;flex-wrap:wrap;font-size:0.8rem;color:var(--c-muted)">
+              <span>📦 Todos los datos</span>
+              <span>📅 Campaña completa</span>
+              <span>💾 ~240 KB</span>
+            </div>
+            <button class="btn btn-secondary" onclick="showToast('Generando exportación completa...'); setTimeout(()=>showToast('✓ quepar_campanya_2026_completa.zip descargado','success'),1800)">
+              <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+              Descargar exportación completa
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /main-content -->
+
+  <div class="toast-container" id="toast-container"></div>
+
   <script src="js/portal.js"></script>
 </body>
 </html>
