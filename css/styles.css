@@ -1,0 +1,186 @@
+/* ============================================
+   QUEPAR 2026 — Shared Design System
+   Fundació CEAM — Albufera de València
+   ============================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=DM+Mono:wght@400;500&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,600;1,9..144,300&display=swap');
+
+/* ── CSS Variables ── */
+:root {
+  --c-bg:        #f4f2ed;
+  --c-surface:   #ffffff;
+  --c-border:    #e0ddd6;
+  --c-text:      #1a1916;
+  --c-muted:     #7a766e;
+  --c-accent:    #2a5f8f;
+  --c-accent2:   #1a3d5c;
+
+  /* Risk colors */
+  --c-risk-0:    #b0acaa;   /* sense dada – gris */
+  --c-risk-1:    #c0392b;   /* molt alt – roig */
+  --c-risk-2:    #e74c3c;   /* alt – roig clar */
+  --c-risk-3:    #e67e22;   /* transitori – taronja */
+  --c-risk-4:    #27ae60;   /* baix – verd */
+  --c-risk-5:    #2ecc71;   /* molt baix – verd clar */
+
+  --radius-sm:   6px;
+  --radius-md:   12px;
+  --radius-lg:   20px;
+  --shadow-sm:   0 1px 4px rgba(0,0,0,.08);
+  --shadow-md:   0 4px 20px rgba(0,0,0,.10);
+  --shadow-lg:   0 12px 40px rgba(0,0,0,.13);
+
+  --font-display: 'Fraunces', serif;
+  --font-body:    'DM Sans', sans-serif;
+  --font-mono:    'DM Mono', monospace;
+}
+
+/* ── Reset ── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-size: 16px; -webkit-font-smoothing: antialiased; }
+body { font-family: var(--font-body); background: var(--c-bg); color: var(--c-text); }
+a { color: var(--c-accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+img { display: block; max-width: 100%; }
+ul { list-style: none; }
+
+/* ── Utility ── */
+.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0,0,0,0); }
+.text-muted { color: var(--c-muted); }
+.text-mono  { font-family: var(--font-mono); }
+
+/* ── Risk badge ── */
+.risk-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+  color: #fff;
+}
+.risk-badge.r0 { background: var(--c-risk-0); color: var(--c-text); }
+.risk-badge.r1 { background: var(--c-risk-1); }
+.risk-badge.r2 { background: var(--c-risk-2); }
+.risk-badge.r3 { background: var(--c-risk-3); }
+.risk-badge.r4 { background: var(--c-risk-4); }
+.risk-badge.r5 { background: var(--c-risk-5); }
+
+/* ── Risk bar (timeline strip) ── */
+.risk-bar {
+  display: flex;
+  height: 48px;
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+}
+.risk-bar-segment {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.65rem;
+  font-weight: 700;
+  color: rgba(255,255,255,.85);
+  letter-spacing: .03em;
+  transition: flex .3s;
+}
+.risk-bar-segment.r1 { background: var(--c-risk-1); }
+.risk-bar-segment.r2 { background: var(--c-risk-2); }
+.risk-bar-segment.r3 { background: var(--c-risk-3); }
+.risk-bar-segment.r4 { background: var(--c-risk-4); }
+.risk-bar-segment.r5 { background: var(--c-risk-5); }
+
+/* ── Button base ── */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  border-radius: var(--radius-sm);
+  font-family: var(--font-body);
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  transition: all .18s;
+}
+.btn-primary   { background: var(--c-accent); color: #fff; }
+.btn-primary:hover { background: var(--c-accent2); transform: translateY(-1px); box-shadow: var(--shadow-md); }
+.btn-secondary { background: transparent; border: 1.5px solid var(--c-accent); color: var(--c-accent); }
+.btn-secondary:hover { background: var(--c-accent); color: #fff; }
+.btn-danger    { background: var(--c-risk-1); color: #fff; }
+.btn-sm        { padding: 6px 14px; font-size: 0.8rem; }
+.btn-lg        { padding: 14px 32px; font-size: 1rem; }
+
+/* ── Card ── */
+.card {
+  background: var(--c-surface);
+  border: 1px solid var(--c-border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+}
+.card-header {
+  padding: 18px 22px 14px;
+  border-bottom: 1px solid var(--c-border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.card-header h3 { font-size: 0.9rem; font-weight: 600; letter-spacing: .01em; }
+.card-body { padding: 18px 22px; }
+
+/* ── Table ── */
+.table-wrap { overflow-x: auto; }
+table { width: 100%; border-collapse: collapse; font-size: 0.84rem; }
+thead th {
+  padding: 10px 14px;
+  text-align: left;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  color: var(--c-muted);
+  border-bottom: 1px solid var(--c-border);
+  background: var(--c-bg);
+}
+tbody td {
+  padding: 11px 14px;
+  border-bottom: 1px solid var(--c-border);
+  vertical-align: middle;
+}
+tbody tr:last-child td { border-bottom: none; }
+tbody tr:hover td { background: #faf9f6; }
+
+/* ── Form inputs ── */
+.form-group { display: flex; flex-direction: column; gap: 6px; }
+.form-label { font-size: 0.8rem; font-weight: 600; color: var(--c-muted); letter-spacing: .03em; text-transform: uppercase; }
+.form-control {
+  padding: 10px 14px;
+  border: 1.5px solid var(--c-border);
+  border-radius: var(--radius-sm);
+  font-family: var(--font-body);
+  font-size: 0.875rem;
+  background: var(--c-bg);
+  color: var(--c-text);
+  transition: border-color .15s, box-shadow .15s;
+  outline: none;
+  width: 100%;
+}
+.form-control:focus { border-color: var(--c-accent); box-shadow: 0 0 0 3px rgba(42,95,143,.12); background: #fff; }
+
+/* ── Stat card ── */
+.stat-card {
+  background: var(--c-surface);
+  border: 1px solid var(--c-border);
+  border-radius: var(--radius-md);
+  padding: 20px 24px;
+  box-shadow: var(--shadow-sm);
+}
+.stat-label { font-size: 0.75rem; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; color: var(--c-muted); margin-bottom: 8px; }
+.stat-value { font-family: var(--font-display); font-size: 2.4rem; font-weight: 600; line-height: 1; }
+.stat-delta { font-size: 0.78rem; color: var(--c-muted); margin-top: 6px; }
+.stat-delta.up   { color: var(--c-risk-4); }
+.stat-delta.down { color: var(--c-risk-1); }
